@@ -3,7 +3,7 @@ node_modules/
 .pnpm/
 .packages/
 
-# Logs
+
 logs/
 *.log
 npm-debug.log*
