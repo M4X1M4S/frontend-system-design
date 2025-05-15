@@ -11,9 +11,12 @@ export const typeDefs = `#graphQl
         name:String!
         books: [Book]!
         }
+
         type Query {
         books: [Book]
         authors: [Author]
         }
+        type Mutation{
+        addBook(title: String!, published: String, authorId: ID!): Book}
         
 `;

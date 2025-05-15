@@ -90,4 +90,11 @@ export const resolvers = {
       return data.authors;
     },
   },
+  Mutation: {
+    addBook: (parent, args, context, info) => {
+      const newBook = { ...args, id: String(data.books.length + 101) };
+      data.books.push(newBook);
+      return newBook;
+    },
+  },
 };
