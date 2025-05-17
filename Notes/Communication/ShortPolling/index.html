@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Short Polling Example</title>
+  </head>
+  <body>
+    <h1>Short Polling</h1>
+    <div id="root"></div>
+    <script>
+      let interval;
+      async function fetchData() {
+        const response = await fetch("/getData");
+        const result = await response.json();
+
+        document.getElementById("root").innerHTML = result.Data;
+      }
+      function shortPolling() {
+        interval = setInterval(() => {
+          fetchData();
+          console.log("Polling");
+        }, 5000); // Poll every 5 seconds
+      }
+      shortPolling();
+      // clearInterval(interval);
+    </script>
+  </body>
+</html>
