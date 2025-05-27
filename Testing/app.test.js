@@ -1,9 +1,10 @@
-console.log("✅ Test file is running");
-import { test, expect } from "@jest/globals";
-import { sortByAge, data } from "./app.js";
+const sortByAge = require("./app");
 
 test("sortByAge sorts the data by age in ascending order", () => {
-  const resultData = sortByAge(data);
-  console.log(resultData);
+  const resultData = sortByAge();
   expect(resultData[0].name).toBe("Priya");
+});
+test("sortByAge should not return undefined", () => {
+  const resultData = sortByAge();
+  expect(resultData).not.toBeUndefined();
 });

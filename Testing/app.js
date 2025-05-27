@@ -1,4 +1,4 @@
-export const data = [
+const data = [
   {
     name: "Abhilash",
     age: 25,
@@ -21,8 +21,9 @@ export const data = [
   },
 ];
 
-export const sortByAge = (data) => {
+const sortByAge = () => {
   const sortedData = [...data].sort((a, b) => a.age - b.age);
 
   return sortedData;
 };
+module.exports = sortByAge;
